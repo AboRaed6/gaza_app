@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "991228982968",
+    "project_id": "project-people-5e898",
+    "storage_bucket": "project-people-5e898.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991228982968:android:86e2e0648f84401c32664d",
+        "android_client_info": {
+          "package_name": "com.masarna.masarna_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991228982968-0c2qhtcblpqe7cqrjg0bpv6262fi97om.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-FjASbQsHafxjUp5OWE7qK_iNa7JFIrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991228982968-0c2qhtcblpqe7cqrjg0bpv6262fi97om.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:991228982968:android:de702babf8734dd932664d",
+        "android_client_info": {
+          "package_name": "com.mohamedraed.gaza_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "991228982968-0c2qhtcblpqe7cqrjg0bpv6262fi97om.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-FjASbQsHafxjUp5OWE7qK_iNa7JFIrs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "991228982968-0c2qhtcblpqe7cqrjg0bpv6262fi97om.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
