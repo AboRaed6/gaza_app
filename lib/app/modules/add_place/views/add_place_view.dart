@@ -17,55 +17,58 @@ class AddPlaceView extends GetView<AddPlaceController> {
   Widget build(BuildContext context) {
     Get.put(AddPlaceController());
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: ColorClass.appBarColor,
+        elevation: 0,
+        leading: Container(),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(
+              Icons.arrow_forward_ios,
+              color: ColorClass.whiteColor,
+            ),
+          ),
+        ],
+      ),
       body: GetBuilder<AddPlaceController>(
         builder: (_) => SingleChildScrollView(
+          // physics:
+          //     BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+           clipBehavior: Clip.antiAlias,
           child: Form(
             key: controller.key,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
                   width: double.infinity,
-                  height: 194.h,
+                  height: 80.h,
                   decoration: BoxDecoration(
                     color: ColorClass.appBarColor,
-                    borderRadius: BorderRadius.only(
+                    borderRadius: const BorderRadius.only(
                       bottomLeft: Radius.circular(50),
                       bottomRight: Radius.circular(50),
                     ),
                   ),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        onPressed: () {
-                          Get.back();
-                        },
-                        icon: Icon(
-                          Icons.arrow_back_ios,
-                          color: ColorClass.whiteColor,
+                  child: Center(
+                    child: Container(
+                      width: 150.w,
+                      height: 48.h,
+                      color: ColorClass.containerColor,
+                      child: Center(
+                        child: Text(
+                          'اضافة مكان'.tr,
+                          style: GoogleFonts.getFont('Cairo',
+                              fontWeight: FontWeight.bold,
+                              fontStyle: FontStyle.normal,
+                              color: ColorClass.textColor,
+                              fontSize: 18.sp),
                         ),
                       ),
-                      SizedBox(
-                        width: 50.w,
-                      ),
-                      Center(
-                        child: Container(
-                          width: 150.w,
-                          height: 48.h,
-                          color: ColorClass.containerColor,
-                          child: Center(
-                            child: Text(
-                              'اضافة مكان',
-                              style: GoogleFonts.getFont('Cairo',
-                                  fontWeight: FontWeight.bold,
-                                  fontStyle: FontStyle.normal,
-                                  color: ColorClass.textColor,
-                                  fontSize: 18.sp),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
+                    ),
                   ),
                 ),
                 SizedBox(
@@ -108,13 +111,14 @@ class AddPlaceView extends GetView<AddPlaceController> {
                       textDirection: TextDirection.rtl,
                       validator: (value) {
                         if (value!.isEmpty) {
-                          return 'الرجاء ملئ الحقل';
+                          return 'الرجاء ملئ الحقل'.tr;
                         }
+                        return null;
                       },
                       controller: controller.placeController,
                       keyboardType: TextInputType.text,
                       decoration: InputDecoration(
-                        hintText: 'اختار المحافظة',
+                        hintText: 'اختار المحافظة'.tr,
                         hintTextDirection: TextDirection.rtl,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(5),
@@ -128,7 +132,7 @@ class AddPlaceView extends GetView<AddPlaceController> {
                 ),
                 CustomTextField(
                   controller: controller.titleController,
-                  hintText: 'المكان',
+                  hintText: 'المكان'.tr,
                   inputType: TextInputType.text,
                 ),
                 SizedBox(
@@ -136,7 +140,7 @@ class AddPlaceView extends GetView<AddPlaceController> {
                 ),
                 CustomTextField(
                   controller: controller.descController,
-                  hintText: 'تفاصيل عن المكان',
+                  hintText: 'تفاصيل عن المكان'.tr,
                   inputType: TextInputType.text,
                   minLines: 5,
                 ),
@@ -163,7 +167,7 @@ class AddPlaceView extends GetView<AddPlaceController> {
                             }
                           },
                           child: Text(
-                            'اضافة المكان',
+                            'اضافة المكان'.tr,
                             style: GoogleFonts.getFont('Cairo',
                                 fontWeight: FontWeight.bold,
                                 fontStyle: FontStyle.normal,

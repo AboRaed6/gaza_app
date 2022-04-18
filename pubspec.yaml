@@ -20,6 +20,8 @@ dependencies:
   cloud_firestore:
   image_picker:
   logger: ^1.1.0
+  get_storage: ^2.0.3
+  google_maps_flutter: ^2.1.3
 
 dev_dependencies: 
   flutter_lints: ^1.0.0

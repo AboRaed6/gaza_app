@@ -16,10 +16,21 @@ class AreaWidget extends StatelessWidget {
         onTap();
       },
       child: Padding(
-        padding: const EdgeInsets.only(right: 20),
+        padding: const EdgeInsetsDirectional.only(start: 20),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            Container(
+              width: 8.w,
+              height: 8.h,
+              decoration: BoxDecoration(
+                color: ColorClass.dotColor,
+                borderRadius: BorderRadius.circular(20),
+              ),
+            ),
+            SizedBox(
+              width: 20.w,
+            ),
             Text(
               textTitle,
               style: GoogleFonts.getFont(
@@ -30,17 +41,8 @@ class AreaWidget extends StatelessWidget {
                 fontSize: 18.sp,
               ),
             ),
-            SizedBox(
-              width: 20.w,
-            ),
-            Container(
-              width: 8.w,
-              height: 8.h,
-              decoration: BoxDecoration(
-                color: ColorClass.dotColor,
-                borderRadius: BorderRadius.circular(20),
-              ),
-            ),
+
+
           ],
         ),
       ),

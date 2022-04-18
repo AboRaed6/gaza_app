@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gaza_app/app/modules/add_place/views/add_place_view.dart';
 import 'package:gaza_app/app/modules/city/views/widgets/area_widget.dart';
+import 'package:gaza_app/app/modules/home/views/widgets/drawer_widget.dart';
 import 'package:gaza_app/app/modules/place/views/place_view.dart';
 import 'package:gaza_app/constant/colors.dart';
 
@@ -16,15 +17,31 @@ class CityView extends GetView<CityController> {
   Widget build(BuildContext context) {
     Get.put(CityController());
     return Scaffold(
+      drawer: DrawerWidget(),
+      appBar: AppBar(
+        backgroundColor: ColorClass.appBarColor,
+        elevation: 0,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(
+              Icons.arrow_forward_ios,
+              color: ColorClass.whiteColor,
+            ),
+          ),
+        ],
+      ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             width: double.infinity,
-            height: 194.h,
+            height: 80.h,
             decoration: BoxDecoration(
               color: ColorClass.appBarColor,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 bottomLeft: Radius.circular(50),
                 bottomRight: Radius.circular(50),
               ),
@@ -32,14 +49,13 @@ class CityView extends GetView<CityController> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: Icon(
-                    Icons.arrow_back_ios,
-                    color: ColorClass.whiteColor,
-                  ),
+                Text(
+                  'محافظة'.tr,
+                  style: GoogleFonts.getFont('Cairo',
+                      fontWeight: FontWeight.bold,
+                      fontStyle: FontStyle.normal,
+                      color: ColorClass.whiteColor,
+                      fontSize: 18.sp),
                 ),
                 Container(
                   width: 100.w,
@@ -47,7 +63,7 @@ class CityView extends GetView<CityController> {
                   color: ColorClass.containerColor,
                   child: Center(
                     child: Text(
-                      Get.arguments['city'],
+                      '${Get.arguments['city']}'.tr,
                       style: GoogleFonts.getFont('Cairo',
                           fontWeight: FontWeight.bold,
                           fontStyle: FontStyle.normal,
@@ -55,14 +71,6 @@ class CityView extends GetView<CityController> {
                           fontSize: 18.sp),
                     ),
                   ),
-                ),
-                Text(
-                  'محافظة',
-                  style: GoogleFonts.getFont('Cairo',
-                      fontWeight: FontWeight.bold,
-                      fontStyle: FontStyle.normal,
-                      color: ColorClass.whiteColor,
-                      fontSize: 18.sp),
                 ),
               ],
             ),
@@ -80,7 +88,7 @@ class CityView extends GetView<CityController> {
               ),
               child: Center(
                   child: Text(
-                'المناطق الأثرية الموجودة بها',
+                'المناطق الأثرية الموجودة بها'.tr,
                 style: GoogleFonts.getFont(
                   'Cairo',
                   fontWeight: FontWeight.bold,
@@ -109,7 +117,7 @@ class CityView extends GetView<CityController> {
               if (controller.title.isEmpty) {
                 return Center(
                   child: Text(
-                    'المحافظة لا يوجد بها مواقع أثرية',
+                    'المحافظة لا يوجد بها مواقع أثرية'.tr,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: ColorClass.appBarColor,
@@ -141,43 +149,6 @@ class CityView extends GetView<CityController> {
               }
             },
           ),
-          // GetBuilder<CityController>(builder: (_) {
-          //   if (controller.isLoadingZahra == true &&
-          //       controller.titleZahra.isEmpty) {
-          //     return Center(
-          //       child: Text(
-          //         'المدينة لا يوجد بها مواقع اثرية',
-          //         style: TextStyle(
-          //           fontSize: 20.sp,
-          //           color: ColorClass.appBarColor,
-          //           fontWeight: FontWeight.bold,
-          //         ),
-          //       ),
-          //     );
-          //   } else if (controller.isLoadingZahra == true) {
-          //     return Center(
-          //       child: CircularProgressIndicator(
-          //         color: ColorClass.appBarColor,
-          //       ),
-          //     );
-          //   } else {
-          //     return ListView.separated(
-          //       shrinkWrap: true,
-          //       primary: false,
-          //       itemBuilder: (context, index) => AreaWidget(
-          //         onTap: () {
-          //           Get.to(() => PlaceView(),
-          //               arguments: {'city': Get.arguments['city']});
-          //         },
-          //         textTitle: controller.titleZahra[index],
-          //       ),
-          //       separatorBuilder: (context, index) => SizedBox(
-          //         height: 20.h,
-          //       ),
-          //       itemCount: controller.titleZahra.length,
-          //     );
-          //   }
-          // }),
         ],
       ),
       floatingActionButton: FloatingActionButton(

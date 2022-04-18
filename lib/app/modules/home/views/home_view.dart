@@ -17,7 +17,7 @@ class HomeView extends GetView<HomeController> {
         builder: (_) => Container(
           width: double.infinity,
           height: double.infinity,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/background.png'),
               fit: BoxFit.fill,
@@ -26,7 +26,7 @@ class HomeView extends GetView<HomeController> {
           child: Container(
             width: 310.w,
             height: 490.h,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/images/map.png'),
               ),
@@ -38,7 +38,7 @@ class HomeView extends GetView<HomeController> {
                   // 150.h,
                   left: 260.w,
                   // 270.w,
-                  textCity: 'بيت لاهيا',
+                  textCity: 'بيت لاهيا'.tr,
                   onTap: () {
                     print('بيت لاهيا');
                     print(MediaQuery.of(context).size.height);
@@ -51,7 +51,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 160.h,
                   left: 300.w,
-                  textCity: 'بيت حانون',
+                  textCity: 'بيت حانون'.tr,
                   onTap: () {
                     print('بيت حانون');
                     controller.cityChange('بيت حانون');
@@ -62,7 +62,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 200.h,
                   left: 280.w,
-                  textCity: 'جباليا',
+                  textCity: 'جباليا'.tr,
                   onTap: () {
                     print('جباليا');
                     controller.cityChange('جباليا');
@@ -73,7 +73,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 180.h,
                   left: 220.w,
-                  textCity: 'الشاطئ',
+                  textCity: 'الشاطئ'.tr,
                   onTap: () {
                     print('الشاطئ');
                     controller.cityChange('الشاطئ');
@@ -84,7 +84,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 230.h,
                   left: 220.w,
-                  textCity: 'غزة',
+                  textCity: 'غزة'.tr,
                   onTap: () {
                     print('غزة');
                     controller.cityChange('غزة');
@@ -95,7 +95,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 250.h,
                   left: 170.w,
-                  textCity: 'الزهراء',
+                  textCity: 'الزهراء'.tr,
                   onTap: () {
                     print('الزهراء');
                     controller.cityChange('الزهراء');
@@ -106,7 +106,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 280.h,
                   left: 140.w,
-                  textCity: 'النصيرات',
+                  textCity: 'النصيرات'.tr,
                   onTap: () {
                     print('النصيرات');
                     controller.cityChange('النصيرات');
@@ -117,7 +117,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 310.h,
                   left: 160.w,
-                  textCity: 'البريج',
+                  textCity: 'البريج'.tr,
                   onTap: () {
                     print('البريج');
                     controller.cityChange('البريج');
@@ -128,7 +128,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 350.h,
                   left: 130.w,
-                  textCity: 'المغازي',
+                  textCity: 'المغازي'.tr,
                   onTap: () {
                     print('المغازي');
                     controller.cityChange('المغازي');
@@ -139,7 +139,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 350.h,
                   left: 80.w,
-                  textCity: 'دير البلح',
+                  textCity: 'دير البلح'.tr,
                   onTap: () {
                     print('دير البلح');
                     controller.cityChange('دير البلح');
@@ -150,7 +150,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 390.h,
                   left: 60.w,
-                  textCity: 'خانيونس',
+                  textCity: 'خانيونس'.tr,
                   onTap: () {
                     print('خانيونس');
                     controller.cityChange('خانيونس');
@@ -161,7 +161,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 440.h,
                   left: 100.w,
-                  textCity: 'عبسان',
+                  textCity: 'عبسان'.tr,
                   onTap: () {
                     print('عبسان');
                     controller.cityChange('عبسان');
@@ -172,7 +172,7 @@ class HomeView extends GetView<HomeController> {
                 CityWidget(
                   top: 480.h,
                   left: 40.w,
-                  textCity: 'رفح',
+                  textCity: 'رفح'.tr,
                   onTap: () {
                     print('رفح');
                     controller.cityChange('رفح');

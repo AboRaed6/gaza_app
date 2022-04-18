@@ -13,16 +13,32 @@ class PlaceView extends GetView<PlaceController> {
   Widget build(BuildContext context) {
     Get.put(PlaceController());
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: ColorClass.appBarColor,
+        elevation: 0,
+        leading: Container(),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(
+              Icons.arrow_forward_ios,
+              color: ColorClass.whiteColor,
+            ),
+          ),
+        ],
+      ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               width: double.infinity,
-              height: 194.h,
+              height: 80.h,
               decoration: BoxDecoration(
                 color: ColorClass.appBarColor,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50),
                 ),
@@ -30,14 +46,14 @@ class PlaceView extends GetView<PlaceController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  IconButton(
-                    onPressed: () {
-                      Get.back();
-                    },
-                    icon: Icon(
-                      Icons.arrow_back_ios,
-                      color: ColorClass.whiteColor,
-                    ),
+
+                  Text(
+                    'محافظة',
+                    style: GoogleFonts.getFont('Cairo',
+                        fontWeight: FontWeight.bold,
+                        fontStyle: FontStyle.normal,
+                        color: ColorClass.whiteColor,
+                        fontSize: 18.sp),
                   ),
                   Container(
                     width: 100.w,
@@ -53,14 +69,6 @@ class PlaceView extends GetView<PlaceController> {
                             fontSize: 18.sp),
                       ),
                     ),
-                  ),
-                  Text(
-                    'محافظة',
-                    style: GoogleFonts.getFont('Cairo',
-                        fontWeight: FontWeight.bold,
-                        fontStyle: FontStyle.normal,
-                        color: ColorClass.whiteColor,
-                        fontSize: 18.sp),
                   ),
                 ],
               ),
