@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gaza_app/app/modules/map/views/map_view.dart';
 import 'package:gaza_app/constant/colors.dart';
 
 import 'package:get/get.dart';
@@ -46,7 +47,6 @@ class PlaceView extends GetView<PlaceController> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-
                   Text(
                     'محافظة',
                     style: GoogleFonts.getFont('Cairo',
@@ -110,7 +110,42 @@ class PlaceView extends GetView<PlaceController> {
               fit: BoxFit.fitWidth,
             ),
             SizedBox(
-              height: 20.h,
+              height: 5.h,
+            ),
+            Center(
+              child: Container(
+                width: MediaQuery.of(context).size.width / 2.2,
+                child: MaterialButton(
+                  color: ColorClass.dotColor,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        Icons.place,
+                        color: ColorClass.whiteColor,
+                      ),
+                      Text(
+                        'انتقل الى الخريطة',
+                        style: TextStyle(
+                          color: ColorClass.whiteColor,
+                          fontSize: 15.sp,
+                        ),
+                      ),
+                    ],
+                  ),
+                  onPressed: () {
+                    Get.to(() => MapView(), arguments: {
+                      'lat': Get.arguments['lat'],
+                      'long': Get.arguments['long'],
+                    });
+                  },
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 5.h,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),

@@ -37,7 +37,7 @@ class AddPlaceView extends GetView<AddPlaceController> {
         builder: (_) => SingleChildScrollView(
           // physics:
           //     BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
-           clipBehavior: Clip.antiAlias,
+          clipBehavior: Clip.antiAlias,
           child: Form(
             key: controller.key,
             child: Column(
@@ -143,6 +143,30 @@ class AddPlaceView extends GetView<AddPlaceController> {
                   hintText: 'تفاصيل عن المكان'.tr,
                   inputType: TextInputType.text,
                   minLines: 5,
+                ),
+                SizedBox(
+                  height: 10.h,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: CustomTextField(
+                        controller: controller.longController,
+                        hintText: 'Long',
+                        inputType: TextInputType.number,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 5.w,
+                    ),
+                    Expanded(
+                      child: CustomTextField(
+                        controller: controller.latController,
+                        hintText: 'Lat',
+                        inputType: TextInputType.number,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(
                   height: 10.h,

@@ -8,11 +8,12 @@ import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
 class AddPlaceController extends GetxController {
-  //TODO: Implement AddPlaceController
   var titleController = TextEditingController();
   var descController = TextEditingController();
   var key = GlobalKey<FormState>();
   var placeController = TextEditingController();
+  var longController = TextEditingController();
+  var latController = TextEditingController();
 
   String imageName = '';
 
@@ -96,12 +97,14 @@ class AddPlaceController extends GetxController {
         firebaseFirestore.collection(collectionName).doc(uniqueKey.id).set({
           'title': titleController.text.trim(),
           'desc': descController.text.trim(),
+          'lat': double.tryParse(latController.text.trim()),
+          'long': double.tryParse(longController.text.trim()),
           'image': uploadPath
         }).then((value) {
-          Get.snackbar('Success', 'Record Inserted.',
-              backgroundColor: Colors.green);
           Get.back();
-        }).catchError((e){
+          Get.snackbar('Success', 'تم تسجيل المكان بنجاح.'.tr,
+              backgroundColor: Colors.green);
+        }).catchError((e) {
           Get.snackbar('Error', e.toString());
         });
       } else {
@@ -112,6 +115,8 @@ class AddPlaceController extends GetxController {
       descController.text = '';
       titleController.text = '';
       placeController.text = '';
+      longController.text = '';
+      latController.text = '';
       imageName = '';
       update();
     });
@@ -137,5 +142,7 @@ class AddPlaceController extends GetxController {
     titleController.dispose();
     descController.dispose();
     placeController.dispose();
+    longController.dispose();
+    latController.dispose();
   }
 }

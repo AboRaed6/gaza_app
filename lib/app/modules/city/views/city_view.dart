@@ -137,6 +137,8 @@ class CityView extends GetView<CityController> {
                         'title': controller.title[index],
                         'desc': controller.desc[index],
                         'image': controller.image[index],
+                        'lat': controller.lat[index],
+                        'long': controller.long[index],
                       });
                     },
                     textTitle: controller.title[index],

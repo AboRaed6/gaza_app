@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     Key? key,
-    required this.controller,
+    this.controller,
     required this.hintText,
     required this.inputType,
     this.minLines,
+    this.onChange,
   }) : super(key: key);
-  final TextEditingController controller;
+  final TextEditingController? controller;
   final TextInputType inputType;
   final String hintText;
   final int? minLines;
+  final Function? onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +26,7 @@ class CustomTextField extends StatelessWidget {
             return 'الرجاء ملئ الحقل';
           }
         },
+        onChanged: (val) => onChange,
         textDirection: TextDirection.rtl,
         controller: controller,
         keyboardType: inputType,
