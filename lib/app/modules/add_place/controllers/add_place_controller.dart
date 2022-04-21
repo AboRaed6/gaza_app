@@ -102,6 +102,7 @@ class AddPlaceController extends GetxController {
           'image': uploadPath
         }).then((value) {
           Get.back();
+          Get.back();
           Get.snackbar('Success', 'تم تسجيل المكان بنجاح.'.tr,
               backgroundColor: Colors.green);
         }).catchError((e) {

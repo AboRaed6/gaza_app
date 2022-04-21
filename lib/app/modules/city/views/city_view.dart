@@ -114,7 +114,8 @@ class CityView extends GetView<CityController> {
                   ),
                 );
               }
-              if (controller.title.isEmpty) {
+              if (controller.title.isEmpty &&
+                  snapshot.connectionState == ConnectionState.done) {
                 return Center(
                   child: Text(
                     'المحافظة لا يوجد بها مواقع أثرية'.tr,
