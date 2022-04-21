@@ -139,6 +139,7 @@ class PlaceView extends GetView<PlaceController> {
                     Get.to(() => MapView(), arguments: {
                       'lat': Get.arguments['lat'],
                       'long': Get.arguments['long'],
+                      'title': Get.arguments['title'],
                     });
                   },
                 ),

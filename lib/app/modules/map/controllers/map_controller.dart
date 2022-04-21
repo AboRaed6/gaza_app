@@ -6,8 +6,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 class MapController extends GetxController {
   Completer<GoogleMapController> controllerCom = Completer();
 
-  final CameraPosition kGooglePlex = const CameraPosition(
-    target: LatLng(37.42796133580664, -122.085749655962),
+  final CameraPosition kGooglePlex = CameraPosition(
+    target: LatLng(Get.arguments['lat'], Get.arguments['long']),
     zoom: 14.4746,
   );
 
