@@ -17,7 +17,7 @@ class CityView extends GetView<CityController> {
   Widget build(BuildContext context) {
     Get.put(CityController());
     return Scaffold(
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       appBar: AppBar(
         backgroundColor: ColorClass.appBarColor,
         elevation: 0,
@@ -99,58 +99,64 @@ class CityView extends GetView<CityController> {
               )),
             ),
           ),
-          SizedBox(
-            height: 20.h,
-          ),
-          FutureBuilder(
-            future: FirebaseFirestore.instance
-                .collection(Get.arguments['city'])
-                .get(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
-                  child: CircularProgressIndicator(
-                    color: ColorClass.appBarColor,
-                  ),
-                );
-              }
-              if (controller.title.isEmpty &&
-                  snapshot.connectionState == ConnectionState.done) {
-                return Center(
-                  child: Text(
-                    'المحافظة لا يوجد بها مواقع أثرية'.tr,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: ColorClass.appBarColor,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                );
-              } else {
-                return ListView.separated(
-                  shrinkWrap: true,
-                  primary: false,
-                  itemBuilder: (context, index) => AreaWidget(
-                    onTap: () {
-                      Get.to(() => PlaceView(), arguments: {
-                        'city': Get.arguments['city'],
-                        'title': controller.title[index],
-                        'desc': controller.desc[index],
-                        'image': controller.image[index],
-                        'lat': controller.lat[index],
-                        'long': controller.long[index],
-                      });
-                    },
-                    textTitle: controller.title[index],
-                  ),
-                  separatorBuilder: (context, index) => SizedBox(
-                    height: 20.h,
-                  ),
-                  itemCount: controller.title.length,
-                );
-              }
-            },
+          Expanded(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 20.h,
+                ),
+                FutureBuilder(
+                  future: FirebaseFirestore.instance
+                      .collection(Get.arguments['city'])
+                      .get(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return Center(
+                        child: CircularProgressIndicator(
+                          color: ColorClass.appBarColor,
+                        ),
+                      );
+                    }
+                    if (controller.title.isEmpty &&
+                        snapshot.connectionState == ConnectionState.done) {
+                      return Center(
+                        child: Text(
+                          'المحافظة لا يوجد بها مواقع أثرية'.tr,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: ColorClass.appBarColor,
+                            fontSize: 25,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      );
+                    } else {
+                      return ListView.separated(
+                        shrinkWrap: true,
+                        primary: false,
+                        itemBuilder: (context, index) => AreaWidget(
+                          onTap: () {
+                            Get.to(() => PlaceView(), arguments: {
+                              'city': Get.arguments['city'],
+                              'title': controller.title[index],
+                              'desc': controller.desc[index],
+                              'image': controller.image[index],
+                              'lat': controller.lat[index],
+                              'long': controller.long[index],
+                            });
+                          },
+                          textTitle: controller.title[index],
+                        ),
+                        separatorBuilder: (context, index) => SizedBox(
+                          height: 20.h,
+                        ),
+                        itemCount: controller.title.length,
+                      );
+                    }
+                  },
+                ),
+              ],
+            ),
           ),
         ],
       ),
