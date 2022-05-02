@@ -105,9 +105,11 @@ class PlaceView extends GetView<PlaceController> {
                 children: [
                   CachedNetworkImage(
                     imageUrl: Get.arguments['image'],
+                    width: double.infinity,
+                    height: 300.h,
                     placeholder: (context, url) => Image.network(
                         'https://www.noage-official.com/wp-content/uploads/2020/06/placeholder.png'),
-                    fit: BoxFit.fitWidth,
+                    fit: BoxFit.cover,
                   ),
                   SizedBox(
                     height: 5.h,
