@@ -68,66 +68,64 @@ class _DrawerWidgetState extends State<DrawerWidget> {
   Widget build(BuildContext context) {
     var controller = Get.put(TranslationController());
     return Drawer(
-      child: Directionality(
-        textDirection: TextDirection.rtl,
-        child: ListView(
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: ColorClass.appBarColor,
-                borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(5.r),
-                    bottomRight: Radius.circular(5.r)),
-              ),
-              child: Container(
-                child: Image.asset('assets/images/logop.png'),
-              ),
+      child: ListView(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: ColorClass.appBarColor,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(5.r),
+                  bottomRight: Radius.circular(5.r)),
             ),
-            SizedBox(
-              height: 30.h,
+            child: Container(
+              child: Image.asset('assets/images/logop.png'),
             ),
-            listTiles(
-              label: 'الرئيسية'.tr,
-              icon: Icons.home,
-              onTap: () {
-                Get.off(() => HomeView());
-              },
-            ),
-            listTiles(
-              label: 'ما هي غزة ؟'.tr,
-              icon: Icons.article,
-              onTap: () {
-                Get.to(() => WhatIsGazaView());
-                // Get.off(() => ProfileView());
-              },
-            ),
-            listTiles(
-              label: 'حول التطبيق'.tr,
-              icon: Icons.quiz_sharp,
-              onTap: () {
-                Get.back();
-                showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return CustomDialogBox(
-                        title: "حول التطبيق".tr,
-                        descriptions:
-                            "تم إنشاء هذا التطبيق (Antique Gaza) بسبب سياسة الكيان الصهيوني الغاشم في تحريف وتزوير أسماء المعالم والمناطق الأثرية والمحافظات الفلسطينية تحديدا في مدينة غزةفسعينا من خلال هذا التطبيق لإبراز الصورة الصحيحة للعالم بأسره عن الأسماء الحقيقية لتلك المعالم الأثرية.".tr,
-                        text: "اغلاق".tr,
-                      );
-                    });
-              },
-            ),
-            Divider(),
-            listTiles(
-              label: 'اللغة'.tr,
-              icon: Icons.translate,
-              onTap: () {
-                showLocaleDialog(context);
-              },
-            ),
-          ],
-        ),
+          ),
+          SizedBox(
+            height: 30.h,
+          ),
+          listTiles(
+            label: 'الرئيسية'.tr,
+            icon: Icons.home,
+            onTap: () {
+              Get.off(() => HomeView());
+            },
+          ),
+          listTiles(
+            label: 'ما هي غزة ؟'.tr,
+            icon: Icons.article,
+            onTap: () {
+              Get.to(() => WhatIsGazaView());
+              // Get.off(() => ProfileView());
+            },
+          ),
+          listTiles(
+            label: 'حول التطبيق'.tr,
+            icon: Icons.quiz_sharp,
+            onTap: () {
+              Get.back();
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return CustomDialogBox(
+                      title: "حول التطبيق".tr,
+                      descriptions:
+                          "تم إنشاء هذا التطبيق من أجل تعريف الناس بالأماكن الأثرية الموجودة في قطاع غزة ،و موقعها على الخريطة. حيث أثناء إجرائنا العديد من البحوث عن الأماكن الأثرية الموجودة في مدينة غزة وجدنا أنه يوجد الكثير ولكن لا نعلم بها، ففكرة التطبيق قائمة على تعريف الناس بالأماكن الأثرية الموجودة داخل مدينة غزة،و موقعها على الخريطة. فوجدنا أن الحل المناسب لتلك الفكرة هو إنشاء تطبيق يحتوي على تلك الأماكن و معلومات عنها ومن مميزات التطبيق أنه يظهر لنا الأماكن الأثرية بإحداثياتها الجغرافيه من خلال التقنية العالميه (GPS)."
+                              .tr,
+                      text: "اغلاق".tr,
+                    );
+                  });
+            },
+          ),
+          const Divider(),
+          listTiles(
+            label: 'اللغة'.tr,
+            icon: Icons.translate,
+            onTap: () {
+              showLocaleDialog(context);
+            },
+          ),
+        ],
       ),
     );
   }

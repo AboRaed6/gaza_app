@@ -35,7 +35,7 @@ class HomeView extends GetView<HomeController> {
                     width: 355.w,
                   ),
                   CityWidget(
-                    top: size.height / 16.6,
+                    top: size.height / 12.6,
                     // 150.h,
                     left: size.width / 1.4,
                     // 270.w,
@@ -50,7 +50,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 11.1,
+                    top: size.height / 9.1,
                     left: size.width / 1.25,
                     textCity: 'بيت حانون'.tr,
                     onTap: () {
@@ -61,7 +61,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 7.9,
+                    top: size.height / 6.9,
                     left: size.width / 1.4,
                     textCity: 'جباليا'.tr,
                     onTap: () {
@@ -72,7 +72,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 7.9,
+                    top: size.height / 6.9,
                     left: size.width / 1.7,
                     textCity: 'الشاطئ'.tr,
                     onTap: () {
@@ -83,7 +83,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 6.0,
+                    top: size.height / 5.5,
                     left: size.width / 1.6,
                     textCity: 'غزة'.tr,
                     onTap: () {
@@ -94,7 +94,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 5.6,
+                    top: size.height / 5.0,
                     left: size.width / 2.0,
                     textCity: 'الزهراء'.tr,
                     onTap: () {
@@ -105,7 +105,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 4.7,
+                    top: size.height / 4.4,
                     left: size.width / 2.3,
                     textCity: 'النصيرات'.tr,
                     onTap: () {
@@ -138,7 +138,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 3.5,
+                    top: size.height / 3.3,
                     left: size.width / 3.3,
                     textCity: 'دير البلح'.tr,
                     onTap: () {
@@ -149,7 +149,7 @@ class HomeView extends GetView<HomeController> {
                     },
                   ),
                   CityWidget(
-                    top: size.height / 2.65,
+                    top: size.height / 2.5,
                     left: size.width / 5,
                     textCity: 'خانيونس'.tr,
                     onTap: () {
