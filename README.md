@@ -1,16 +1,11 @@
-# gaza_app
+# AntiqueGaza App
 
-A new Flutter project.
+Flutter AntiqueGaza Application.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+The video description about Jerusalem App. https://odysee.com/@Mohamed_Raed:2/jerusalem:d
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The use statemanagment : GetX. || multi language(Arabic - English). || use Get Storage save data in mobile data. || Location in google map
+  || Firebase : 1-Cloud firestore.     || Responsive Application.
+                2-firebase storage.
